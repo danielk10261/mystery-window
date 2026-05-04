@@ -1,0 +1,32 @@
+﻿body {
+    background-image: url(images/homepage.png);
+    background-size: cover;
+}
+.button1 {
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    width: 600px;
+    height: 300px;
+    border: none;
+
+    background-image: url(images/buttonstart.png);
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+}
+.betinput{
+    position: absolute;
+    width: 185px;
+    height: 65px;
+    top: 68.5%;
+    left: 43.5%;
+    font-size: 24px;
+}
+.divcoins {
+    position: absolute;
+    top: 87.9%;
+    left: 10%;
+    font-size: 45px;
+    color: #ffc500;
+}
