@@ -14,6 +14,6 @@ function resbut() {
 }
 // מעבר לעמוד הבא (לתקן את זה דחוף
 function nextpage() {
-    window.location.href = "index.html?coins=" + allcoins;
+    window.location.href = "homepage.html?coins=" + allcoins;
 }
 
