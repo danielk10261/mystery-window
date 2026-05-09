@@ -12,7 +12,7 @@ function resbut() {
     divbutton.appendChild(resbutton);
     resbutton.setAttribute("class", "resbutton");
 }
-// מעבר לעמוד הבא (לתקן את זה דחוף
+// מעבר לעמוד הבא 
 function nextpage() {
     window.location.href = "homepage.html?coins=" + allcoins;
 }

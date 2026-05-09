@@ -1,17 +1,21 @@
 ﻿var chosendoor;
 var inputdoor;
+var baddoor;
 var divcoins2 = document.getElementById("divcoins2");
+
 divcoins2.setAttribute("class", "divcoins2");
 var urlParams = new URLSearchParams(window.location.search);
-var allcoins = urlParams.get("coins");
+var allcoins = parseInt(urlParams.get("coins"));
+var bet = parseInt(urlParams.get("bet"));
 divcoins2.innerHTML = allcoins;
 var arrdoors = [1, 2, 3, 4];
 choosedoor();
 chosendoor = parseInt(inputdoor.value);
-var baddoor = Math.floor(Math.random() * 4) + 1;
+var beforecoins = allcoins;
 
 // כפתור השמירה, כפתור בחירת הדלת
 function choosedoor() {
+    baddoor = Math.floor(Math.random() * 4) + 1;
     inputdoor = document.createElement("input");
     var divdoor = document.getElementById("divdoor");
     inputdoor.type = "number";
@@ -26,12 +30,17 @@ function choosedoor() {
 }
 // פונקציה שמעבירה לדף שמודיע על ההפסד
 function nextpage() {
-        window.location.href = "youlost.html?coins="+allcoins;
+    window.location.href = "youlost.html?coins=" + beforecoins;
 }
 // לשמור את הדלת שהמשתמש בחר
 function savedoor() {
     chosendoor = inputdoor.value;
-    checkdoor();
+    if (chosendoor < 1 || chosendoor > 4) {
+        alert("please choose a door between 1 and 4");
+    }
+    else {
+        checkdoor();
+    }
 }
 // לבדוק האם הדלת שהמשתמש בחר נכונה או לא
 function checkdoor() {
@@ -39,9 +48,23 @@ function checkdoor() {
         nextpage();
     }
     else {
-        var multiply = Math.random() + 1;
-        allcoins = allcoins * multiply;
+        var multiply = Math.random() * 0.44 + 1.01;
+        var prize = multiply * bet;
+        allcoins = Math.floor(allcoins + prize);
         parseInt(allcoins);
         divcoins2.innerHTML = allcoins;
+
+        var choice = confirm("האם אתה רוצה לפרוש?");
+        if (choice == true) {
+            retire();
+        }
+        else {
+            choosedoor();
+        }
     }
 }
+// המשתמש בוחר אם לפרוש ולקחת את הכסף או לא
+function retire() {
+    window.location.href = "homepage.html?coins=" + allcoins;
+}
+   
