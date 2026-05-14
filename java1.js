@@ -6,7 +6,7 @@ var body = document.getElementById("firstpage");
 var betamount;
 var flag = true;
 var urlParams = new URLSearchParams(window.location.search);
-stopbtn();
+
 
 if (body != null) {
     startcoins();
@@ -14,6 +14,8 @@ if (body != null) {
     betbutton1();
     instructionsbutton();
     musicbuttons();
+    stopbtn();
+    morebutton();
 }
 else {
     divcoins.innerHTML = coins;
@@ -140,5 +142,27 @@ function stopmusic() {
         currentmusic.pause();
     }
 }
+ // פונקציה שמפעילה כפתור שנותן כסף במקרה הצורך
+function morebutton() {
+        var nomoney = document.getElementById("brokediv");
+        var moremoney = document.createElement("input");
+        moremoney.type = "button";
+        moremoney.setAttribute("class", "moremoney");
+        nomoney.appendChild(moremoney);
+        moremoney.onclick = getcoins;
+}
+// פונקציה שמביאה כסף במידת הצורך
+function getcoins() {
+    if (coins == 0) {
+        coins = 50;
+        divcoins.innerHTML = coins;
+    }
+    else {
+        alert("אין לך אפס מטבעות!");
+    }
+}
+    
+   
+
 
 

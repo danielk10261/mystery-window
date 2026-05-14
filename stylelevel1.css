@@ -2,6 +2,7 @@
     background-image: url(images/levelbackground.png);
     background-size: cover;
 }
+
 .divcoins2 {
     position: absolute;
     top: 87.9%;
@@ -9,18 +10,20 @@
     font-size: 45px;
     color: #ffc500;
 }
-.choosedoor{
+
+.choosedoor {
     position: absolute;
     top: 47%;
     left: 49%;
-    width: 75px;
-    height: 75px;
+    width: 6%;
+    height: 10%;
     font-size: 40px;
 }
-.confirmbutton{
+
+.confirmbutton {
     position: absolute;
     top: 60%;
     left: 49%;
-    width: 75px;
-    height: 75px;
+    width: 6%;
+    height: 10%;
 }

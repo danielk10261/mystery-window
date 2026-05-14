@@ -1,6 +1,7 @@
 ﻿body {
     background-color: #8a6319;
 }
+
 p {
     color: #ffc500;
     font-size: 35px;
@@ -8,12 +9,13 @@ p {
     text-align: center;
     direction: rtl;
 }
+
 .button4 {
     position: absolute;
     top: 50%;
     left: 40%;
-    width: 400px;
-    height: 400px;
+    width: 20%;
+    height: 40%;
     border: none;
     background-image: url(images/home2.png);
     background-size: cover;
