@@ -58,11 +58,11 @@ function betbutton1() {
 function minusmoney() {
     betamount = parseInt(document.getElementById("betinput").value);
     if (betamount <= 0 || betamount != betamount) {
-        alert("Please enter a bet amount");
+        alert("תכניס סכום להימור");
         flag = false;
     }
     else if (betamount > coins) {
-        alert("bet is too high");
+        alert("ההימור ששמת גבוה מדי");
         flag = false;
     }
     else {
@@ -123,9 +123,14 @@ function musicbuttons() {
 }
 // פונקציה המנגנת את המוזיקה
 function playmusic(song) {
-    currentmusic = new Audio(song);
-    currentmusic.loop = true;
-    currentmusic.play();
+    if (currentmusic) {
+        alert("עצור קודם את השיר הנוכחי");
+    }
+    else {
+        currentmusic = new Audio(song);
+        currentmusic.loop = true;
+        currentmusic.play();
+    }
 }
 // כפתור שמפסיק את המוזיקה
 function stopbtn() {
@@ -140,6 +145,7 @@ function stopbtn() {
 function stopmusic() {
     if (currentmusic) {
         currentmusic.pause();
+        currentmusic = null;
     }
 }
  // פונקציה שמפעילה כפתור שנותן כסף במקרה הצורך
@@ -158,7 +164,7 @@ function getcoins() {
         divcoins.innerHTML = coins;
     }
     else {
-        alert("אין לך אפס מטבעות!");
+        alert("יש לך עוד מטבעות, במידה ואין לך תוכל לקחת");
     }
 }
     

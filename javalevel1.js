@@ -36,7 +36,7 @@ function nextpage() {
 function savedoor() {
     chosendoor = inputdoor.value;
     if (chosendoor < 1 || chosendoor > 4) {
-        alert("please choose a door between 1 and 4");
+        alert("תבחר מספר דלת בין 1 ל 4");
     }
     else {
         checkdoor();
@@ -54,7 +54,7 @@ function checkdoor() {
         parseInt(allcoins);
         divcoins2.innerHTML = allcoins;
 
-        var choice = confirm("האם אתה רוצה לפרוש?");
+        var choice = confirm("ניצחת, האם תרצה לקחת את הכסף ולפרוש?");
         if (choice == true) {
             retire();
         }
